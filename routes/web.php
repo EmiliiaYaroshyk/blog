@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('api/blog/posts', [\App\Http\Controllers\Api\Blog\PostController::class, 'index']);
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -42,3 +44,6 @@ Route::group($groupData, function () {
         ->except(['show'])                               //не робити маршрут для метода show
         ->names('blog.admin.posts');
 });
+
+
+
